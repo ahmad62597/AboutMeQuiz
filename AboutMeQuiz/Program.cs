@@ -37,11 +37,17 @@ namespace AboutMeQuiz
 
             //Begin the quiz
             for (int i = 0; i < questions.Length; i++)
-                //Ask the questions and check it with the answers
-            { string answer = QuestionAndAnswer(questions[i]);
+            //Ask the questions and check it with the answers
+            {
+                string answer = QuestionAndAnswer(questions[i]);
                 bool correct = CheckAnswer(answers[i], answer);
 
                 //show the right answer
+                ShowResults(correct, answers[i]);
+                score += UpdateScore(correct);
+            }
+
+
 
         }
 
