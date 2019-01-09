@@ -47,6 +47,42 @@ namespace AboutMeQuiz
                 score += UpdateScore(correct);
             }
 
+            //Asks the questions from the array, and returns an answer
+
+             string QuestionAndAnswer(string question)
+            {
+                //asks the question
+                Console.WriteLine($"--> {question}");
+
+                //get the answer
+                string answer = Console.ReadLine().ToLower();
+
+                Console.WriteLine();
+
+                return answer;
+            }
+
+            //compares given answer against answers within the array
+            //returns true if it is correct, otherwise will return false
+            
+            bool CheckAnswer(string answer, string userInput)
+            {
+                //checks for answers for an int
+                if (answer == userInput) return true;
+
+                //checks for answers with string
+                else if (string.Compare(answer, userInput) == 0) return true;
+
+                //check for true and false answer
+                else if (answer[0] == userInput[0] && (userInput[0] == 't' || userInput[0] == 'f')) return true;
+
+                return false;
+
+
+            }
+            
+
+
 
 
         }
