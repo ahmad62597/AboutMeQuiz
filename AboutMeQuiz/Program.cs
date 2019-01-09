@@ -2,7 +2,7 @@
 
 namespace AboutMeQuiz
 {
-    class Program
+    class Program 
     {
         static void Main(string[] args)
         {   //welcome message
@@ -35,7 +35,13 @@ namespace AboutMeQuiz
             //stretch goal for correct answer counter
             int totalscore = 0;
 
+            //Begin the quiz
+            for (int i = 0; i < questions.Length; i++)
+                //Ask the questions and check it with the answers
+            { string answer = QuestionAndAnswer(questions[i]);
+                bool correct = CheckAnswer(answers[i], answer);
 
+                //show the right answer
 
         }
 
