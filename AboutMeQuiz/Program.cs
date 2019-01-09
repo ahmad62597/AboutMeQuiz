@@ -7,7 +7,7 @@ namespace AboutMeQuiz
         static void Main(string[] args)
         {   //welcome message
             Console.WriteLine("Welcome to my About Me Quiz! How well do you know me?");
-            Console.ReadKey();
+            
 
             //array for my questions
             string[] questions =
@@ -22,9 +22,9 @@ namespace AboutMeQuiz
 
             //array for my answers in order of the questions
             string[] answers =
-                
+
              {
-           
+
                 "Karachi",
                 "Tiger",
                 "22",
@@ -33,7 +33,7 @@ namespace AboutMeQuiz
                 };
 
             //stretch goal for correct answer counter
-            int totalscore = 0;
+            int score = 0;
 
             //Begin the quiz
             for (int i = 0; i < questions.Length; i++)
@@ -49,7 +49,7 @@ namespace AboutMeQuiz
 
             //Asks the questions from the array, and returns an answer
 
-             string QuestionAndAnswer(string question)
+            string QuestionAndAnswer(string question)
             {
                 //asks the question
                 Console.WriteLine($"--> {question}");
@@ -64,7 +64,7 @@ namespace AboutMeQuiz
 
             //compares given answer against answers within the array
             //returns true if it is correct, otherwise will return false
-            
+
             bool CheckAnswer(string answer, string userInput)
             {
                 //checks for answers for an int
@@ -80,12 +80,37 @@ namespace AboutMeQuiz
 
 
             }
+
+            void ShowResults(bool correct, string answer)
+
+            {
+                if (correct)
+
+                {
+                    Console.WriteLine("Nice, youre right!");
+                }
+
+                else
+                {
+                    Console.WriteLine("Nope, thats wrong");
+                }
+            }
+
+            //score function, adds and updates
+
+            int UpdateScore(bool correctAnswer)
+            {
+                if (correctAnswer)
+                {
+                    return 1;
+                }
+                else return 0;
+                  
+            }
             
-
-
-
-
         }
+
+  
 
       
     }
